@@ -38,7 +38,7 @@ export default function SplitScreen({ isAuthenticated }) {
     try {
     const response = await axios.post('http://localhost:5000/predict', formData)
     console.log(response?.data?.fraud_prediction)
-    let random = Math.random() < 0.4 ;
+    let random = response?.data?.fraud_prediction ;
     setDetected(random)
     } catch (error) {
       console.log("ERROR" , error)
